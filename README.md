@@ -31,7 +31,6 @@ cp .env.example .env      # set ANTHROPIC_API_KEY
 npm start                 # http://localhost:3000
 npm test
 ```
-Click **Load example** in the UI to try the sample files in `examples/`.
 
 ## Configuration (environment variables)
 | Variable | Purpose |
@@ -41,13 +40,6 @@ Click **Load example** in the UI to try the sample files in `examples/`.
 | `PORT` | Default 3000 |
 | `ACCESS_TOKEN` | If set, users must enter it; **set this on any public deployment** to protect your API credits |
 
-## Deploy
-**Docker**
-```bash
-docker build -t grant-review .
-docker run -p 3000:3000 -e ANTHROPIC_API_KEY=... -e ACCESS_TOKEN=... grant-review
-```
-**Render / Railway / Fly.io**: create a Web Service from the GitHub repo. Build command `npm install`, start command `npm start`, add the environment variables above. Health check path: `/healthz`.
 
 ## Limitations
 - Text input only (paste or .txt/.md). Add PDF/DOCX parsing in `public/app.js` or the server if needed.
@@ -55,6 +47,3 @@ docker run -p 3000:3000 -e ANTHROPIC_API_KEY=... -e ACCESS_TOKEN=... grant-revie
 - Review state is per browser. For teams, add a database and move state to the server.
 - AI ratings can be wrong; citation checks prove a quote exists, not that it satisfies the requirement. Human review is part of the design.
 - Don't upload confidential material unless your Anthropic data terms allow it.
-
-## License
-MIT
