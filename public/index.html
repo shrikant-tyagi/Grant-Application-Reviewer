@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Grant Application Reviewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css"></head><body><main>
+<h1>Grant Application Reviewer</h1>
+<p class="mu">Checks a draft against a guideline and maps evidence. A completeness aid only — <b>not</b> a legal or funding-eligibility decision.</p>
+<div class="grid">
+  <section><b>Guideline</b> <span class="mu" id="gv"></span>
+    <input type="file" accept=".txt,.md,.csv" data-f="g">
+    <textarea id="gt" placeholder="Paste grant guideline text…"></textarea>
+    <div class="row"><select id="gsel"></select><button class="s" id="grest">Restore version</button></div></section>
+  <section><b>Draft application</b> <span class="mu" id="av"></span>
+    <input type="file" accept=".txt,.md,.csv" data-f="a">
+    <textarea id="at" placeholder="Paste draft application text…"></textarea>
+    <div class="row"><select id="asel"></select><button class="s" id="arest">Restore version</button></div></section>
+</div>
+<section><b>Supporting documents (optional metadata)</b> <span class="mu">— one per line: name | type | description</span>
+<textarea id="dt" style="min-height:70px" placeholder="Audited accounts 2025 | PDF | Signed by auditor"></textarea></section>
+<div class="row"><button id="run">Analyze</button><button class="s" id="demo">Load example</button><span id="st"></span></div>
+<div id="out"></div>
+</main><script type="module" src="app.js"></script></body></html>
